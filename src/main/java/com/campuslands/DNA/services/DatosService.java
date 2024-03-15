@@ -14,4 +14,6 @@ public interface DatosService {
     void delete(Long id);
 
     void update(Long id, Datos datosActualizado);
+
+    Datos findSuspect(String cromosoma);
 }
