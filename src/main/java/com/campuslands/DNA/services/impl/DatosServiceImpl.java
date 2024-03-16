@@ -42,8 +42,10 @@ public class DatosServiceImpl implements DatosService{
     @Override
     @Transactional
     public void delete(Long id) {
+        // Encontrar id
         Optional<Datos> eliminarDatos=repositoryDatos.findById(id);
         if (eliminarDatos.isPresent()) {
+            // Eliminar la persona
             repositoryDatos.delete(eliminarDatos.get());
         }
     }
@@ -51,9 +53,12 @@ public class DatosServiceImpl implements DatosService{
     @Override
     @Transactional
     public void update(Long id, Datos datosActualizado) {
+        // Buscar la persona
         Optional<Datos> buscarPersona = repositoryDatos.findById(id);
         if (buscarPersona.isPresent()) {
+            // Obtener la persona
             Datos personaExistente = buscarPersona.get();
+            // Actualizar datos
             personaExistente.setNombre(datosActualizado.getNombre());
             personaExistente.setApellido(datosActualizado.getApellido());
             personaExistente.setDireccion(datosActualizado.getDireccion());
