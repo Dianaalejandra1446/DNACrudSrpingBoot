@@ -68,7 +68,7 @@ public class DatosServiceImpl implements DatosService{
     }
 @Override
 @Transactional
-public Datos findSuspect(String cromosoma) {
+public String findSuspect(String cromosoma) {
     // Obtener la lista de todas las personas
     List<Datos> personas = finAll();
     
@@ -107,7 +107,8 @@ public Datos findSuspect(String cromosoma) {
             ", Porcentaje de parentesco: " + porcentajeParentesco + "%");
 
     // Devolver el objeto Datos del sospechoso encontrado
-    return sospechoso;
+    return "Sospechoso: " + sospechoso.getNombre() + " " + sospechoso.getApellido() +
+    ", Porcentaje de parentesco: " + porcentajeParentesco + "%";
 }
 
     

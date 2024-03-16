@@ -15,5 +15,5 @@ public interface DatosService {
 
     void update(Long id, Datos datosActualizado);
 
-    Datos findSuspect(String cromosoma);
+    String findSuspect(String cromosoma);
 }

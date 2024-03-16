@@ -46,8 +46,8 @@ public class DatosController {
         datosService.update(id, datosPersona);
     }
 
-    @GetMapping("/find-suspect")
-    public Datos findSuspect(@RequestBody String cromosoma){
+    @GetMapping("/find-suspect/{cromosoma}")
+    public String findSuspect(@PathVariable String cromosoma){
         return datosService.findSuspect(cromosoma);
     }
 }
