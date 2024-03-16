@@ -18,12 +18,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
-@RequestMapping("/analisis-persona")
+@RequestMapping("/analisis")
 @AllArgsConstructor
 public class DatosController {
     private DatosService datosService;
 
-    @GetMapping("/")
+    @GetMapping("/all")
     public List<Datos> finAll(){
         return datosService.finAll();
     }
@@ -32,7 +32,7 @@ public class DatosController {
     public Datos finAllById(@PathVariable Long id){
         return datosService.finById(id);
     }
-    @PostMapping("/")
+    @PostMapping("/save")
     public Datos save(@RequestBody Datos datosPersona){
         return datosService.save(datosPersona);
     }
@@ -46,7 +46,7 @@ public class DatosController {
         datosService.update(id, datosPersona);
     }
 
-    @GetMapping("/")
+    @GetMapping("/find-suspect")
     public Datos findSuspect(@RequestBody String cromosoma){
         return datosService.findSuspect(cromosoma);
     }
